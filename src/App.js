@@ -10,7 +10,7 @@ const [categ,setCateg]=useState([
   "all","entertainment","national","business","science","technology","hatke","automobile","sports","startup","politics","world","miscellaneous"
 ])
 const val=(n)=>{
-  console.log(n)
+  // console.log(n)
   setFinalize(n)
 
   
