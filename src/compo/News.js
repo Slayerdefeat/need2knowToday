@@ -52,13 +52,13 @@ function capitalize(n){
 
 
 <h1 className={`text-center my-4  text-${props.mode==="light"?"dark":"warning"}`}>{capitalize(props.category)} News</h1>
-<div className="container ">
+<div className="container-fluid mx-5 text-center">
 
 {
     loader &&
     <Spin/>
   }
-<div className="row justify-content-md-center">
+<div className="row justify-content-md-center  ">
   {
     d.map((ele)=>{
       return (
