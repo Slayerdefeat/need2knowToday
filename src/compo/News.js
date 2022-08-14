@@ -51,19 +51,19 @@ function capitalize(n){
 <>
 
 
-<div className="container">
 <h1 className={`text-center my-4  text-${props.mode==="light"?"dark":"warning"}`}>{capitalize(props.category)} News</h1>
+<div className="container ">
 
 {
     loader &&
     <Spin/>
   }
-<div className="row">
+<div className="row justify-content-md-center">
   {
     d.map((ele)=>{
       return (
 
-        <div className="col-lg-3 col-md-4 col-sm-2" key={ele.id}>
+        <div className=" col" key={ele.id}>
         <Newsitem mode={props.mode}title={ele.title?ele.title:"No Title"}time={ele.time?ele.time:""} publish={ele.date?ele.date:""} img={ele.imageUrl?ele.imageUrl:"noimg.jpg"} link={ele.readMoreUrl?ele.readMoreUrl:"https://www.inshorts.com/en/news"} author={ele.author?ele.author:"Not Reveal"}/>
   
 

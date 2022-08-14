@@ -4,16 +4,25 @@ function Nav(props) {
   return (
 <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
   <div className="container-fluid">
-    <NavLink className="navbar-brand" to="/">Need2KnowToday</NavLink>
+    <a className="navbar-brand" >Need2KnowToday</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+
+        {
+          props.categ.map((ele)=>{
+            return (
+              <li className="nav-item cursor-pointer" key={ele}>
+                {/* {console.log(ele)} */}
+              <a className="nav-link active" style={{cursor:"pointer"}}  aria-current="page" name={ele} onClick={(e)=>props.val(e.target.name)} >{ele.charAt(0).toUpperCase() + ele.slice(1,).toLowerCase()}</a>
+            </li>
+            )
+          })
+        }
+      
         {/* <li className="nav-item">
-          <NavLink className="nav-link " aria-current="page" to="/">All</NavLink>
-        </li> */}
-        <li className="nav-item">
           <NavLink className="nav-link " aria-current="page" to="/world">World</NavLink>
         </li>
         <li className="nav-item">
@@ -50,7 +59,7 @@ function Nav(props) {
         </li>
         <li className="nav-item">
           <NavLink className="nav-link " aria-current="page" to="/automobile">Automobile</NavLink>
-        </li>
+        </li> */}
       </ul>
 
       <div className="form-check form-switch">

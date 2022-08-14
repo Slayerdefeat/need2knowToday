@@ -1,12 +1,20 @@
 import React,{useState} from 'react'
 import Nav from './compo/Nav'
 import News from './compo/News'
-import {Routes,Route} from 'react-router-dom'
 
 function App() {
 
   const [mode,setMode]=useState("light")
+  const [finalize,setFinalize]=useState("")
+const [categ,setCateg]=useState([
+  "all","entertainment","national","business","science","technology","hatke","automobile","sports","startup","politics","world","miscellaneous"
+])
+const val=(n)=>{
+  console.log(n)
+  setFinalize(n)
 
+  
+}
 
   const moding=()=>{
     if(mode==="light"){
@@ -24,9 +32,13 @@ function App() {
   return (
 <>
 
-<Nav moding={moding} mode={mode}/>
+<Nav moding={moding} mode={mode} categ={categ} val={val}/>
+
+    <News mode={mode} key={finalize?finalize:"all"} category={finalize?finalize:"all"}/>
+  
+
 {/* <Route path="/" mode={mode}element={<News mode={mode} category="all"/>}/> */}
-<Routes>
+{/* <Routes>
 <Route path="/" element={<News mode={mode} key="all"category="all"/>}/>
 <Route path="/entertainment"element={<News mode={mode} key="national" category="entertainment"/>}/>
 
@@ -49,7 +61,7 @@ function App() {
 
 
 
-</Routes>
+</Routes> */}
 
 </>
     )
